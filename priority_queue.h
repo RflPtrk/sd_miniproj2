@@ -10,4 +10,5 @@ public:
 	virtual int return_size() const = 0;
 
 	virtual void print() const = 0;
+	virtual bool is_empty() const = 0;
 };
