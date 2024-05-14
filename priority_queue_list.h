@@ -16,4 +16,5 @@ public:
 	void modify_key(int elem, int new_priori)override;
 	int return_size()const override { return size; }
 	void print() const override;
+	int peek_priori();
 };
