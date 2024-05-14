@@ -116,3 +116,12 @@ bool priority_queue_heap::is_empty() const
 {
 	return size==0;
 }
+
+int priority_queue_heap::peek_priori() const
+{
+	if (size <= 0) {
+		std::cout << "Heap underflow!" << std::endl;
+		return -1;
+	}
+	return heap_array[0].priori;
+}
