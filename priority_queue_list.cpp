@@ -9,6 +9,7 @@ priority_queue_list::~priority_queue_list()
 	}
 }
 
+//Wstawienie nowego elementu do kolejki
 void priority_queue_list::insert(int elem, int priori)
 {
 	node* new_node = new node(elem, priori);
@@ -31,6 +32,7 @@ void priority_queue_list::insert(int elem, int priori)
 	size++;
 }
 
+//Usuniecie elementu o najwiekszym priorytecie
 int priority_queue_list::extract_max()
 {
 	if (front == nullptr) {
@@ -45,6 +47,7 @@ int priority_queue_list::extract_max()
 	return deleted_data;
 }
 
+//Podejrzenie elementu o najwiekszym priorytecie
 int priority_queue_list::peek() const
 {
 	if (front == nullptr) {
@@ -54,16 +57,18 @@ int priority_queue_list::peek() const
 	return front->value;
 }
 
+//Zmiana priorytetu wybranego elementu
 void priority_queue_list::modify_key(int elem, int new_priori)
 {
 	if (front == nullptr) {
 		std::cout << "The queue is empty." << std::endl;
 		return;
 	}
-	node* current = front;
+	node* current = front;	//Utworzenie wezla iteratora
+	//Przejscie przez kolejki do momentu odnalezienia danego wezla lub do konca kolejki
 	while (current != nullptr) {
 		if (current->value == elem) {
-			current->priority = new_priori;
+			current->priority = new_priori;	//Nadanie nowego priorytetu
 			return;
 		}
 		current = current->next;
@@ -71,17 +76,18 @@ void priority_queue_list::modify_key(int elem, int new_priori)
 	std::cout << "The element of inputted value doesn't exist in this queue." << std::endl;
 }
 
+//Wypisanie kolejki
 void priority_queue_list::print() const
 {
 	if (front == nullptr) {
 		std::cout << "The queue is empty." << std::endl;
 		return;
 	}
-	node* current = front;
+	node* current = front; //Utworzenie wezla iteratora
 	std::cout << "The queue's contents: ";
 	while (current != nullptr) {
-		std::cout << "(" << current->value << ", " << current->priority << ") ";
-		current = current->next;
+		std::cout << "(" << current->value << ", " << current->priority << ") "; //Wypisanie danych obecnego wezla
+		current = current->next;	//Przejscie do nastepnego wezla
 	}
 	std::cout << std::endl;
 }
