@@ -92,11 +92,13 @@ void priority_queue_list::print() const
 	std::cout << std::endl;
 }
 
+//Sprawdzenie czy kolejka jest pusta
 bool priority_queue_list::is_empty() const
 {
 	return front==nullptr;
 }
 
+//Podejrzenie najwyzszego priorytetu (pomocnicze)
 int priority_queue_list::peek_priori() const
 {
 	if (front == nullptr) {
