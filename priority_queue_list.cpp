@@ -13,18 +13,18 @@ void priority_queue_list::insert(int elem, int priori)
 {
 	node* new_node = new node(elem, priori);
 
-	// Jeœli kolejka jest pusta lub nowy element ma wiêkszy priorytet ni¿ front, wstawiamy go na pocz¹tek
+	// Jeśli kolejka jest pusta lub nowy element ma większy priorytet niż front, wstawiamy go na początek
 	if (front == nullptr || priori > front->priority) {
 		new_node->next = front;
 		front = new_node;
 	}
 	else {
 		node* current = front;
-		// Szukamy odpowiedniego miejsca w kolejce, gdzie nowy element bêdzie mia³ mniejszy priorytet ni¿ nastêpny element
+		// Szukamy odpowiedniego miejsca w kolejce, gdzie nowy element będzie miał mniejszy priorytet niż następny element
 		while (current->next != nullptr && current->next->priority >= priori) {
 			current = current->next;
 		}
-		// Wstawiamy nowy element pomiêdzy obecnego i jego nastêpnika
+		// Wstawiamy nowy element pomiędzy obecnego i jego następnika
 		new_node->next = current->next;
 		current->next = new_node;
 	}
@@ -84,13 +84,14 @@ void priority_queue_list::print() const
 		current = current->next;
 	}
 	std::cout << std::endl;
+}
 
 bool priority_queue_list::is_empty() const
 {
 	return front==nullptr;
 }
 
-int priority_queue_list::peek_priori()
+int priority_queue_list::peek_priori() const
 {
 	if (front == nullptr) {
 		std::cerr << "The queue is empty." << std::endl;
