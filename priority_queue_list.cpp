@@ -21,7 +21,7 @@ void priority_queue_list::insert(int elem, int priori)
 	}
 	else {
 		node* current = front;
-		// Szukamy odpowiedniego miejsca w kolejce, gdzie nowy element będzie miał mniejszy priorytet niż następny element
+		// Szukamy odpowiedniego miejsca w kolejce, gdzie nowy element będzie miał większy priorytet niż następny element
 		while (current->next != nullptr && current->next->priority >= priori) {
 			current = current->next;
 		}
