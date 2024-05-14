@@ -17,5 +17,5 @@ public:
 	int return_size()const override { return size; }
 	void print() const override;
 	bool is_empty() const override;
-	int peek_priori();
+	int peek_priori()const override;
 };
