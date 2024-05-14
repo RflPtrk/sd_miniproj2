@@ -11,4 +11,5 @@ public:
 
 	virtual void print() const = 0;
 	virtual bool is_empty() const = 0;
+	virtual int peek_priori()const = 0;
 };
