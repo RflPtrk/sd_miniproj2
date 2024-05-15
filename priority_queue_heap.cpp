@@ -126,7 +126,7 @@ void priority_queue_heap::print() const
 	}
 	std::cout << "Heap elements: " << std::endl;
 	for (int i = 0; i < size; ++i) {
-		std::cout << "Value: " << heap_array[i].elem << ", Priority: " << heap_array[i].priori << std::endl;
+		std::cout << "(" << heap_array[i].elem << ", " << heap_array[i].priori << ")\n";
 	}
 }
 
