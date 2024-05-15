@@ -74,13 +74,13 @@ double methods_test(priority_queue_list& pq, int value, int priority) {
     priority_queue_list pq;
     fillPriorityQueueAndSaveToFile("priority_queue_contents.txt", 20000);
     readPriorityQueueFromFile("priority_queue_contents.txt", pq);
-    double e_time[5];
+    double e_time[10];
     double sum = 0.0;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 10; i++) {
         e_time[i]= methods_test(pq, (12867 - 12*i), (4211 +5*i));
         sum += e_time[i];
     }
-    double average = sum / 5;
+    double average = sum / 10;
     std::cout << "Average execution time: " << average << " microseconds" << std::endl;
     return 0;
 }*/
