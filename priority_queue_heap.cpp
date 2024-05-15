@@ -91,6 +91,7 @@ int priority_queue_heap::peek() const
 		std::cout << "Heap underflow!" << std::endl;
 		return -1;
 	}
+	std::cout << "(" << heap_array[0].elem << ", " << heap_array[0].priori << ")\n";
 	return heap_array[0].elem;
 }
 
