@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
@@ -9,7 +9,7 @@
 
 void fillPriorityQueueAndSaveToFile(const std::string& filename, int elem_num) {
     // Tworzymy obiekt kolejki priorytetowej
-    priority_queue_list pq;
+    priority_queue_heap pq;
 
     std::mt19937 rng(std::random_device{}());
     std::uniform_int_distribution<int32_t> elem_dist(std::numeric_limits<int32_t>::min(), std::numeric_limits<int32_t>::max()); // Zakres liczb pseudolosowych dla elementów
@@ -70,9 +70,9 @@ double methods_test(priority_queue_list& pq, int value, int priority) {
 
 }
 
-int main() {
+/*int main() {
     priority_queue_list pq;
-    fillPriorityQueueAndSaveToFile("priority_queue_contents.txt", 5000);
+    fillPriorityQueueAndSaveToFile("priority_queue_contents.txt", 20000);
     readPriorityQueueFromFile("priority_queue_contents.txt", pq);
     double e_time[5];
     double sum = 0.0;
@@ -83,7 +83,7 @@ int main() {
     double average = sum / 5;
     std::cout << "Average execution time: " << average << " microseconds" << std::endl;
     return 0;
-}
+}*/
 
 void method_choice(priority_queue* pq) {
     bool cond = true;
@@ -107,6 +107,7 @@ void method_choice(priority_queue* pq) {
             break;
         case 3:
             pq->peek();
+            break;
         case 4:
             std::cout << "Podaj element, ktorego priorytet chcesz zmienic: \n";
             std::cin >> element;
@@ -156,9 +157,9 @@ void implem_choice() {
     }
 }
 
-/*int main() {
+int main() {
     while (true) {
         implem_choice();
     }
     return 0;
-}*/
+}
