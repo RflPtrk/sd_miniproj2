@@ -54,6 +54,7 @@ int priority_queue_list::peek() const
 		std::cerr << "The queue is empty." << std::endl;
 		return -1;
 	}
+	std::cout << "(" << front->value << ", " << front->priority << ")\n";
 	return front->value;
 }
 
